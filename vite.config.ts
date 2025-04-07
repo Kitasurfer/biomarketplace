@@ -28,5 +28,10 @@ export default defineConfig({
         // Убираем rewrite, чтобы сохранить префикс /api в запросах
       }
     }
+  },
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    emptyOutDir: true
   }
 });
