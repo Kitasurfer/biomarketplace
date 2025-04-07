@@ -1,12 +1,10 @@
-import { Product as BaseProduct, ProductReview as BaseProductReview } from 'pages/Product/types.ts';
-import { ProductImage as BaseProductImage } from '../../.././../types/ProductImage';
+import { Product as ProductType } from '../../../../types/product';
+import { ProductImage } from '../../../../types/ProductImage';
+import { ProductReview } from '../../../../types/product';
 
 // Экспортируем типы для совместимости с существующим кодом
-export type ProductImage = BaseProductImage;
-export type ProductReview = BaseProductReview;
-
-// Используем общий интерфейс Product из types/product.ts
-export type Product = BaseProduct;
+export type { ProductImage, ProductReview };
+export type Product = ProductType;
 
 export interface ProductCardProps {
   product: Product;
