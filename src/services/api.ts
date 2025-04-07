@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Product } from "../components/ProductCard/ui/Root/types";
+import { API_URL } from "../config/api";
 
 /**
  * Адаптер для преобразования данных продукта с бэкенда в формат фронтенда
@@ -24,8 +25,7 @@ export const adaptProductFromBackend = (backendProduct: any): Product => {
 // Используем относительный URL для избежания CORS ошибок
 // В режиме разработки Vite будет проксировать запросы к /api на сервер
 const api = axios.create({
-  // Используем пустой базовый URL, так как мы уже указываем полный путь в запросах
-  baseURL: "",
+  baseURL: API_URL,
   headers: {
     'Authorization': `Bearer ${localStorage.getItem('token') || ''}`,
     'Content-Type': 'application/json'
