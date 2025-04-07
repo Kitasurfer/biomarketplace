@@ -14,7 +14,8 @@ export default defineConfig({
       store: path.resolve(__dirname, "src/store"),
       styles: path.resolve(__dirname, "src/styles"),
       theme: path.resolve(__dirname, "src/theme"),
-      shared: path.resolve(__dirname, "src/shared")
+      shared: path.resolve(__dirname, "src/shared"),
+      types: path.resolve(__dirname, "src/types")
     }
   },
   server: {
@@ -32,6 +33,9 @@ export default defineConfig({
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    emptyOutDir: true
+    emptyOutDir: true,
+    sourcemap: false,
+    minify: true,
+    reportCompressedSize: false
   }
 });
